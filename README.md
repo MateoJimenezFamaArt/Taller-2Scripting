@@ -46,11 +46,11 @@ Implementar y probar las siguientes características en un proyecto utilizando C
 
 ## Porcentajes
 
-(10%) Asistencia a clase
-(10%) Diapositivas y exposición en clase
-(10%) Argumentación individual
-(10%) Uso del repositorio
-(20%) Aplicación de los principios SOLID y patrones de diseño
-(20%) Trabajo en equipo y nuevo grupo
-(20%) Funcionalidad y claridad del código en C#
+- (10%) Asistencia a clase
+- (10%) Diapositivas y exposición en clase
+- (10%) Argumentación individual
+- (10%) Uso del repositorio
+- (20%) Aplicación de los principios SOLID y patrones de diseño
+- (20%) Trabajo en equipo y nuevo grupo
+- (20%) Funcionalidad y claridad del código en C#
 
