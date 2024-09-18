@@ -70,3 +70,7 @@ Implementar y probar las siguientes características en un proyecto utilizando C
 1. Manuela Buritica -> 1,3
 3. Esteban Araujo -> 2, 4
 4. Mateo Jimenez -> 5
+
+## Presentacion
+
+[Click aca pofabo](https://docs.google.com/presentation/d/1_T3JnpX077LiF-M-6WlWR2Rxr351SXsEcoAU2Wq5_N0/edit?usp=sharing)
