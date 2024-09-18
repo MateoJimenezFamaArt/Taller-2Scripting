@@ -78,5 +78,117 @@ namespace SingletonApp
     }
 }
 ```
+Ejercicio práctico: Implementación del patrón Observer en una aplicación de consola.
 
+Implemente un programa en C# que utilice el patrón de diseño Observer. En este ejercicio, se simulará un sistema de notificaciones donde varios observadores se suscriben a un sujeto y reciben actualizaciones cuando el estado del sujeto cambie.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+namespace ObserverApp
+{
+    // Interfaz del Observador
+    public interface IObservador
+    {
+        void Actualizar(string mensaje);
+    }
+
+    // Interfaz del Sujeto
+    public interface ISujeto
+    {
+        void Suscribir(IObservador observador);
+        void Desuscribir(IObservador observador);
+        void Notificar(string mensaje);
+    }
+
+    // Clase SujetoConcreto que implementa la interfaz ISujeto
+    public class SujetoConcreto : ISujeto
+    {
+        private List<IObservador> observadores = new List<IObservador>();
+
+        // Método para suscribir un observador
+        public void Suscribir(IObservador observador)
+        {
+            observadores.Add(observador);
+            Console.WriteLine("Observador suscrito.");
+        }
+
+        // Método para desuscribir un observador
+        public void Desuscribir(IObservador observador)
+        {
+            observadores.Remove(observador);
+            Console.WriteLine("Observador desuscrito.");
+        }
+
+        // Método para notificar a todos los observadores
+        public void Notificar(string mensaje)
+        {
+            foreach (var observador in observadores)
+            {
+                observador.Actualizar(mensaje);
+            }
+        }
+
+        // Método para cambiar el estado del sujeto y notificar a los observadores
+        public void CambiarEstado(string nuevoEstado)
+        {
+            Console.WriteLine($"El estado ha cambiado a: {nuevoEstado}");
+            Notificar($"Nuevo estado: {nuevoEstado}");
+        }
+    }
+
+    // Clase ObservadorConcreto que implementa la interfaz IObservador
+    public class ObservadorConcreto : IObservador
+    {
+        private string nombre;
+
+        public ObservadorConcreto(string nombre)
+        {
+            this.nombre = nombre;
+        }
+
+        // Método que se llama cuando el sujeto notifica a este observador
+        public void Actualizar(string mensaje)
+        {
+            Console.WriteLine($"{nombre} ha recibido la actualización: {mensaje}");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Crear el sujeto concreto
+            SujetoConcreto sujeto = new SujetoConcreto();
+
+            // Crear observadores concretos
+            ObservadorConcreto observador1 = new ObservadorConcreto("Observador 1");
+            ObservadorConcreto observador2 = new ObservadorConcreto("Observador 2");
+            ObservadorConcreto observador3 = new ObservadorConcreto("Observador 3");
+
+            // Suscribir observadores al sujeto
+            sujeto.Suscribir(observador1);
+            sujeto.Suscribir(observador2);
+
+            // Cambiar el estado del sujeto y notificar a los observadores
+            sujeto.CambiarEstado("Activo");
+
+            // Desuscribir un observador
+            sujeto.Desuscribir(observador2);
+
+            // Cambiar el estado nuevamente
+            sujeto.CambiarEstado("Inactivo");
+
+            // Suscribir otro observador
+            sujeto.Suscribir(observador3);
+
+            // Cambiar el estado una vez más
+            sujeto.CambiarEstado("Esperando");
+
+            Console.ReadKey();
+        }
+    }
+}
+```
 
