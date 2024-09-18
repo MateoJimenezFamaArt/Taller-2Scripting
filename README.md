@@ -15,6 +15,9 @@ Implementar y probar las siguientes características en un proyecto utilizando C
 
 - Desarrollar una pequeña aplicación en Unity y en consola que demuestre estos patrones y principios. (Uno en Unity y Uno en Consola)
 
+## Puntos
+
+### Punto 1 Teoria
 - Responder las siguientes preguntas teóricas:
 
   1. ¿Qué son los principios SOLID y cómo contribuyen a un buen diseño orientado a objetos?
@@ -22,20 +25,27 @@ Implementar y probar las siguientes características en un proyecto utilizando C
   3. ¿Cómo funciona el patrón Observer y en qué situaciones es útil?
   4. ¿Qué es un antipatrón? explique por medio de dos ejemplos.
 
+### Punto 2 Desarrollo sencillo
 - Desarrollar ejercicios prácticos sencillos, similares a los siguientes:
 
   1. Ejercicio practico con Singleton (Hacer Una ConsoleApp)
   2. Ejercicio practico con Observer (Hacer Una ConsoleApp)
 
+### Punto 3 Desarrollo de Consultas
+
 - Consulte un código o librería nativo de C# que use el patrón decorador.
 
 - Definir y utilizar delegados para implementar el patrón observer. (Hacer Una ConsoleApp)
+
+### Punto 4 Realizar App con dos patrones de diseño
 
 - Configurar el proyecto para usar otros patrones de diseño. Implementar dos de los siguientes patrones en una aplicación sencilla: (Hacer Una ConsoleApp)
 1. Patrón Decorador
 2. Patrón Facade
 3. Patrón Strategy
 4. Patrón Adapter
+
+### Punto 5 Ejemplos cortos y comparaciones entre C# puro y Unity
 
 - Realice ejemplos cortos, realice su implementación en unity y en c sharp por separado 
 - ¿Que diferencias hay en cada implementación del patrón?
@@ -54,3 +64,9 @@ Implementar y probar las siguientes características en un proyecto utilizando C
 - (20%) Trabajo en equipo y nuevo grupo
 - (20%) Funcionalidad y claridad del código en C#
 
+
+## Tareas Correspondientes
+
+1. Manuela Buritica -> 1,3
+3. Esteban Araujo -> 2, 4
+4. Mateo Jimenez -> 5
