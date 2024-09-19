@@ -4,7 +4,7 @@
 
 
 
-### Punto 3
+### Punto 2
 #### Ejercicio práctico: Implementación del patrón Singleton en una aplicación de consola.
 
 Implemente una clase Configuracion que siga el patrón Singleton. Esta clase debe tener las propiedades NombreAplicacion y Version, que almacenen la información de configuración de una aplicación. Asegúrese de que solo una instancia de esta clase sea accesible durante toda la ejecución del programa.
