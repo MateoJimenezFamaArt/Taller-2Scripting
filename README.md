@@ -54,6 +54,7 @@ Explica el patrón de diseño Decorator y cómo puede utilizarse para agregar re
 El patrón Decorator permite agregar responsabilidades adicionales a objetos de manera dinámica. Se utiliza una clase decoradora que contiene una referencia a un objeto del mismo tipo, de modo que cuando se llama a un método del decorador, este ejecuta su propia lógica adicional y luego delega la ejecución en el objeto decorado.
 
 Aquí está el ejemplo de un procesador de datos que se extiende con un decorador para medir el tiempo de procesamiento y otro para invertir el contenido de los datos:
+```c#
 
 // Interfaz común
 public interface IDataProcessor
@@ -111,6 +112,7 @@ public class ReverseProcessor : ProcessorDecorator
         Console.WriteLine($"Datos invertidos: {reversedData}");
     }
 }
+```
 
 // Uso del decorador
 var processor = new ReverseProcessor(new TimingProcessor(new BasicProcessor()));
