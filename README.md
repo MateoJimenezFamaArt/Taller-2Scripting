@@ -123,6 +123,8 @@ Explica el patrón de diseño Facade y cómo puede utilizarse para simplificar l
 El patrón Facade proporciona una interfaz simplificada para acceder a subsistemas complejos. Actúa como una puerta de entrada, delegando las solicitudes a las clases adecuadas dentro del sistema y ocultando las complejidades al usuario.
 
 Aquí está el ejemplo de un sistema de manejo de archivos con operaciones de lectura, compresión y encriptación, simplificado mediante una fachada:// Subsistema complejo
+
+```c#
 public class FileReader
 {
     public string ReadFile(string filePath)
@@ -173,6 +175,8 @@ public class FileFacade
 // Uso de la fachada
 var fileFacade = new FileFacade();
 fileFacade.ProcessFile("ruta/del/archivo.txt");
+
+```
 
 
 
