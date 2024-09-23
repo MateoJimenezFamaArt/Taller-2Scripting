@@ -45,6 +45,82 @@ Implementar y probar las siguientes características en un proyecto utilizando C
 3. Patrón Strategy
 4. Patrón Adapter
 
+## ejercico 2 
+
+### Configurar el proyecto para usar otros patrones de diseño. Implementar dos de los siguientes patrones en una aplicación sencilla: 
+
+Explica el patrón de diseño Decorator y cómo puede utilizarse para agregar responsabilidades adicionales a los objetos de forma dinámica sin modificar su clase original. Implementa un ejemplo donde un procesador de datos básico se extienda para medir el tiempo de procesamiento y, además, invertir el contenido de los datos procesados.
+
+El patrón Decorator permite agregar responsabilidades adicionales a objetos de manera dinámica. Se utiliza una clase decoradora que contiene una referencia a un objeto del mismo tipo, de modo que cuando se llama a un método del decorador, este ejecuta su propia lógica adicional y luego delega la ejecución en el objeto decorado.
+
+Aquí está el ejemplo de un procesador de datos que se extiende con un decorador para medir el tiempo de procesamiento y otro para invertir el contenido de los datos:
+
+// Interfaz común
+public interface IDataProcessor
+{
+    void Process(string data);
+}
+
+// Clase concreta
+public class BasicProcessor : IDataProcessor
+{
+    public void Process(string data)
+    {
+        Console.WriteLine($"Procesamiento básico: {data}");
+    }
+}
+
+// Decorador base
+public abstract class ProcessorDecorator : IDataProcessor
+{
+    protected IDataProcessor _processor;
+
+    public ProcessorDecorator(IDataProcessor processor)
+    {
+        _processor = processor;
+    }
+
+    public virtual void Process(string data)
+    {
+        _processor.Process(data);
+    }
+}
+
+// Decorador para medir el tiempo
+public class TimingProcessor : ProcessorDecorator
+{
+    public TimingProcessor(IDataProcessor processor) : base(processor) { }
+
+    public override void Process(string data)
+    {
+        var start = DateTime.Now;
+        base.Process(data);
+        var end = DateTime.Now;
+        Console.WriteLine($"Tiempo de procesamiento: {end - start}");
+    }
+}
+
+// Decorador para invertir el texto
+public class ReverseProcessor : ProcessorDecorator
+{
+    public ReverseProcessor(IDataProcessor processor) : base(processor) { }
+
+    public override void Process(string data)
+    {
+        var reversedData = new string(data.Reverse().ToArray());
+        Console.WriteLine($"Datos invertidos: {reversedData}");
+    }
+}
+
+// Uso del decorador
+var processor = new ReverseProcessor(new TimingProcessor(new BasicProcessor()));
+processor.Process("Hola Mundo");
+
+Explica el patrón de diseño Facade y cómo puede utilizarse para simplificar la interacción con un sistema complejo. Implementa un ejemplo donde un sistema de manejo de archivos realiza operaciones de lectura, compresión y encriptación, utilizando una interfaz simplificada.
+
+El patrón Facade proporciona una interfaz simplificada para acceder a subsistemas complejos. Actúa como una puerta de entrada, delegando las solicitudes a las clases adecuadas dentro del sistema y ocultando las complejidades al usuario.
+
+Aquí está el ejemplo de un sistema de manejo de archivos con operaciones de lectura, compresión y encriptación, simplificado mediante una fachada:
 
 
 ## Punto 5 Ejemplos cortos y comparaciones entre C# puro y Unity
