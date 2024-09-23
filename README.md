@@ -145,6 +145,29 @@ public class FileEncryptor
     }
 }
 
+// Fachada
+public class FileFacade
+{
+    private FileReader _fileReader;
+    private FileCompressor _fileCompressor;
+    private FileEncryptor _fileEncryptor;
+
+    public FileFacade()
+    {
+        _fileReader = new FileReader();
+        _fileCompressor = new FileCompressor();
+        _fileEncryptor = new FileEncryptor();
+    }
+
+    public void ProcessFile(string filePath)
+    {
+        var content = _fileReader.ReadFile(filePath);
+        var compressedContent = _fileCompressor.Compress(content);
+        var encryptedContent = _fileEncryptor.Encrypt(compressedContent);
+        Console.WriteLine(encryptedContent);
+    }
+}
+
 
 
 
