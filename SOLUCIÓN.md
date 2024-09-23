@@ -192,3 +192,14 @@ namespace ObserverApp
 }
 ```
 
+
+## Punto 5
+
+Porfavor presiona este [](link) para probar la demo en unity
+
+### Explicacion rapida
+
+En la primer pantalla un singleton alberga todos los posibles colores que puede tomar el bloque central y mediante el uso de botones le decimos que color debe tomar del singleton
+
+En la segunda pantalla le decimos una cantidad de objetos que queremos agregar a la pool e instanciamos esos objetos, luego podemos dispararlos o usarlos para finalmente hacer un recall y volver a reestablecer las balas a un estado util, este poolin emplea el metodo observer puesto que las balas se subscriben y desuscriben de un handler del pool que les permite estar en la escena activas y luego desactivarse y luego reciclarse
+##
