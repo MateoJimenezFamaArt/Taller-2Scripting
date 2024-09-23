@@ -168,6 +168,9 @@ public class FileFacade
     }
 }
 
+// Uso de la fachada
+var fileFacade = new FileFacade();
+fileFacade.ProcessFile("ruta/del/archivo.txt");
 
 
 
