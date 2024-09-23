@@ -56,7 +56,7 @@ Implementar y probar las siguientes características en un proyecto utilizando C
 - Realizar una exposición con los resultados en clase
 
 
-## Porcentajes
+### Porcentajes
 
 - (10%) Asistencia a clase
 - (10%) Diapositivas y exposición en clase
