@@ -45,7 +45,7 @@ Implementar y probar las siguientes características en un proyecto utilizando C
 3. Patrón Strategy
 4. Patrón Adapter
 
-## Punto 5 Ejemplos cortos y comparaciones entre C# puro y Unity
+### Punto 5 Ejemplos cortos y comparaciones entre C# puro y Unity
 
 - Realice ejemplos cortos, realice su implementación en unity y en c sharp por separado 
 - ¿Que diferencias hay en cada implementación del patrón?
@@ -54,7 +54,7 @@ Implementar y probar las siguientes características en un proyecto utilizando C
 - Realizar una exposición con los resultados en clase
 
 
-### Porcentajes
+## Porcentajes
 
 - (10%) Asistencia a clase
 - (10%) Diapositivas y exposición en clase
