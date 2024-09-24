@@ -1,6 +1,6 @@
 ### Punto 1
 
-#### ¿Qué son los principios SOLID y cómo contribuyen a un buen diseño orientado a objetos?
+#### i. ¿Qué son los principios SOLID y cómo contribuyen a un buen diseño orientado a objetos?
 
 
 **S - Single Responsibility Principle (Principio de Responsabilidad Única):**
@@ -24,36 +24,87 @@ Es mejor tener muchas interfaces pequeñas y específicas que varias grandes y g
 El objetivo principal de DIP es reducir el acoplamiento entre los módulos de un sistema, es decir, disminuir la dependencia directa entre distintas partes del código para mejorar la flexibilidad, la mantenibilidad y la capacidad de adaptación del software.
 
 
-#### Explica cómo el patrón Singleton asegura que solo haya una instancia de una clase y cuáles son sus posibles usos
+#### ii. Explica cómo el patrón Singleton asegura que solo haya una instancia de una clase y cuáles son sus posibles usos
 
 El patrón Singleton garantiza una sola instancia mediante las siguientes características clave:
 
-**1.	Constructor Privado:**
+**- Constructor Privado:**
 
 Se define un constructor privado para evitar que otras clases creen nuevas instancias de la clase Singleton usando el operador new. Esto restringe la creación del objeto desde fuera de la clase.
 
-**2.	Instancia Estática:**
+**- Instancia Estática:**
 
 La clase contiene una referencia estática (generalmente un campo privado) a la única instancia de sí misma.
 
-**3.	Método Estático de Acceso:**
+**- Método Estático de Acceso:**
 
 Un método público y estático (generalmente llamado getInstance()) controla el acceso a la instancia única. Este método crea la instancia si aún no existe y la devuelve en caso contrario.
 
+Posibles Usos del Patrón Singleton:
+
+**1.	Gestión de Configuración:**
+
+Mantener una sola instancia de un gestor de configuración que lea y escriba parámetros de configuración de una aplicación, asegurando que todas las partes del programa compartan la misma configuración.
+
+**2.	Conexión a Bases de Datos:**
+
+Administrar una única conexión a la base de datos en lugar de crear nuevas conexiones cada vez que se necesiten, lo que ahorra recursos y mejora el rendimiento.
+
+**3.	Gestión de Recursos Compartidos:**
+
+Controlar el acceso a recursos compartidos, como impresoras o dispositivos de entrada/salida, asegurando que no haya conflictos o uso simultáneo no coordinado.
+
+**4.	Log de Aplicaciones:**
+
+Mantener una instancia de un logger para registrar mensajes de depuración o errores. Esto asegura que todos los mensajes vayan a un solo lugar.
+
+**5.	Controladores de Estados Globales:**
+
+En juegos o sistemas con estados globales (como un administrador de escena o de estado), un Singleton asegura que el estado se gestione desde una única fuente.
 
 
 
-#### ¿Cómo funciona el patrón Observer y en qué situaciones es útil?
+#### iii. ¿Cómo funciona el patrón Observer y en qué situaciones es útil?
+El patrón Observer se compone principalmente de dos tipos de objetos:
 
+**1.	Subject (Sujeto):**
 
+Es el objeto que mantiene el estado y notifica a los observadores cuando hay cambios. El Subject tiene una lista de observadores y métodos para agregar (attach), eliminar (detach) y notificar (notify) a estos observadores.
+
+**2.	Observers (Observadores):**
+
+Son los objetos que desean estar informados sobre los cambios en el sujeto. Cada observador implementa una interfaz que define el método update(), que es llamado por el sujeto cuando hay un cambio.
 
 
 #### ¿Qué es un antipatrón? explique por medio de dos ejemplos
+Un antipatrón es una solución comúnmente adoptada para un problema de diseño o programación que, aunque puede parecer efectiva o práctica a primera vista, resulta contraproducente, ineficiente o problemático a largo plazo. Los antipatrones suelen surgir de malas prácticas, falta de experiencia o decisiones apresuradas, y su uso puede conducir a sistemas difíciles de mantener, propensos a errores y con un rendimiento deficiente.
 
+**Ejemplo 1: God Object**
 
+Un "God Object" es un antipatrón donde una sola clase asume demasiadas responsabilidades, manejando una gran parte de la lógica del programa. Este objeto contiene demasiados métodos, tiene muchos campos, y se convierte en el "centro del universo" de la aplicación, haciéndose cargo de tareas que deberían estar distribuidas en otras clases.
 
+Causas :
+- Falta de comprensión de los principios de diseño orientado a objetos, como el Principio de Responsabilidad Única.
+- Intento de simplificar la lógica agrupándola en un solo lugar, en lugar de delegar responsabilidades a otras clases.
+  
+Consecuencias:
 
+- Dificultad para comprender y modificar el código debido a la alta complejidad y responsabilidad del objeto.
+- Código altamente acoplado y poco reutilizable.
 
+**Ejemplo 2: Big ball of Mud**
+
+Es un antipatrón en el que el sistema de software carece de una arquitectura bien definida o estructurada, y su código se convierte en una maraña desorganizada y caótica. Los módulos y clases están pobremente organizados, con dependencias entrelazadas y sin un propósito claro o separación de responsabilidades.
+
+Causas:
+- Desarrollo sin planificación ni diseño previo.
+- Falta de evaluación continua del código.
+
+Consecuencias:
+
+- El mantenimiento se vuelve extremadamente costoso y difícil.
+- La adición de nuevas funcionalidades introduce errores debido a la alta complejidad y falta de claridad.
+- La corrección de errores es lenta y tediosa, porque los cambios en una parte del sistema pueden afectar inesperadamente a otras partes.
 
 ### Punto 2
 #### Ejercicio práctico: Implementación del patrón Singleton en una aplicación de consola.
