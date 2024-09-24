@@ -1,3 +1,22 @@
+### Punto 1
+#### Ejercicio teorico:
+
+**¿Qué son los principios SOLID y cómo contribuyen a un buen diseño orientado a objetos?**
+
+
+
+
+**Explica cómo el patrón Singleton asegura que solo haya una instancia de una clase y cuáles son sus posibles usos**
+
+
+
+
+**¿Cómo funciona el patrón Observer y en qué situaciones es útil?**
+
+
+
+
+**¿Qué es un antipatrón? explique por medio de dos ejemplos**
 
 
 
@@ -78,7 +97,7 @@ namespace SingletonApp
     }
 }
 ```
-Ejercicio práctico: Implementación del patrón Observer en una aplicación de consola.
+#### Ejercicio práctico: Implementación del patrón Observer en una aplicación de consola.
 
 Implemente un programa en C# que utilice el patrón de diseño Observer. En este ejercicio, se simulará un sistema de notificaciones donde varios observadores se suscriben a un sujeto y reciben actualizaciones cuando el estado del sujeto cambie.
 
