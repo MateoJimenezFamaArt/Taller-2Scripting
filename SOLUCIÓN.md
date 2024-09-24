@@ -1,22 +1,54 @@
 ### Punto 1
-#### Ejercicio teorico:
 
-**¿Qué son los principios SOLID y cómo contribuyen a un buen diseño orientado a objetos?**
-
+#### ¿Qué son los principios SOLID y cómo contribuyen a un buen diseño orientado a objetos?
 
 
+**S - Single Responsibility Principle (Principio de Responsabilidad Única):**
 
-**Explica cómo el patrón Singleton asegura que solo haya una instancia de una clase y cuáles son sus posibles usos**
+Cada clase debe tener una única responsabilidad o razón para cambiar. Es decir, una clase debe encargarse solo de una funcionalidad específica dentro del sistema. Esto facilita el mantenimiento y la comprensión del código.
+
+**O - Open/Closed Principle (Principio Abierto/Cerrado):**
+
+Las entidades de software (clases, módulos, funciones, etc.) deben estar abiertas para extensión, pero cerradas para modificación. Esto significa que el comportamiento de una clase debe poder extenderse sin modificar su código fuente.
+
+**L - Liskov Substitution Principle (Principio de Sustitución de Liskov):**
+
+establece que una clase derivada (hija) debe poder sustituir a su clase base (padre) sin que el comportamiento del programa se vea afectado. Este principio es fundamental para asegurar que la herencia en la programación orientada a objetos sea correcta y no cause problemas inesperados en el código.
+
+**I - Interface Segregation Principle (Principio de Segregación de Interfaces):**
+
+Es mejor tener muchas interfaces pequeñas y específicas que varias grandes y generales. Los clientes no deben estar obligados a depender de interfaces que no usan, lo que mejora la flexibilidad y la cohesión.
+
+**D - Dependency Inversion Principle (Principio de Inversión de Dependencias):**
+
+El objetivo principal de DIP es reducir el acoplamiento entre los módulos de un sistema, es decir, disminuir la dependencia directa entre distintas partes del código para mejorar la flexibilidad, la mantenibilidad y la capacidad de adaptación del software.
+
+
+#### Explica cómo el patrón Singleton asegura que solo haya una instancia de una clase y cuáles son sus posibles usos
+
+El patrón Singleton garantiza una sola instancia mediante las siguientes características clave:
+
+**1.	Constructor Privado:**
+
+Se define un constructor privado para evitar que otras clases creen nuevas instancias de la clase Singleton usando el operador new. Esto restringe la creación del objeto desde fuera de la clase.
+
+**2.	Instancia Estática:**
+
+La clase contiene una referencia estática (generalmente un campo privado) a la única instancia de sí misma.
+
+**3.	Método Estático de Acceso:**
+
+Un método público y estático (generalmente llamado getInstance()) controla el acceso a la instancia única. Este método crea la instancia si aún no existe y la devuelve en caso contrario.
 
 
 
 
-**¿Cómo funciona el patrón Observer y en qué situaciones es útil?**
+#### ¿Cómo funciona el patrón Observer y en qué situaciones es útil?
 
 
 
 
-**¿Qué es un antipatrón? explique por medio de dos ejemplos**
+#### ¿Qué es un antipatrón? explique por medio de dos ejemplos
 
 
 
