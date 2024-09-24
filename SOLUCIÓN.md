@@ -293,7 +293,7 @@ namespace ObserverApp
     }
 }
 ```
-## ejercico 2 
+## Punto 4 
 
 ### Configurar el proyecto para usar otros patrones de diseño. Implementar dos de los siguientes patrones en una aplicación sencilla: 
 
