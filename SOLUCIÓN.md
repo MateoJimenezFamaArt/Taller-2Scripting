@@ -394,6 +394,9 @@ namespace observer_delegates
    
 }
 ```
+En la terminal se ve de la siguiente manera: 
+
+![image](https://github.com/user-attachments/assets/add877b7-e426-4ce3-8bbf-aa500ba47428)
 
 ## Punto 4 
 
