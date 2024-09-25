@@ -76,7 +76,7 @@ Es el objeto que mantiene el estado y notifica a los observadores cuando hay cam
 Son los objetos que desean estar informados sobre los cambios en el sujeto. Cada observador implementa una interfaz que define el método update(), que es llamado por el sujeto cuando hay un cambio.
 
 
-#### ¿Qué es un antipatrón? explique por medio de dos ejemplos
+#### iv. ¿Qué es un antipatrón? explique por medio de dos ejemplos
 Un antipatrón es una solución comúnmente adoptada para un problema de diseño o programación que, aunque puede parecer efectiva o práctica a primera vista, resulta contraproducente, ineficiente o problemático a largo plazo. Los antipatrones suelen surgir de malas prácticas, falta de experiencia o decisiones apresuradas, y su uso puede conducir a sistemas difíciles de mantener, propensos a errores y con un rendimiento deficiente.
 
 **Ejemplo 1: God Object**
