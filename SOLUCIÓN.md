@@ -304,6 +304,96 @@ Una librería de C# que implementa el patrón Decorador es System.IO, a través 
 - GZipStream : Añade funcionalidad de compresión.
 - CryptoStream : Añade funcionalidad de cifrado.
 
+### Definir y utilizar delegados para implementar el patrón observer
+
+En el siguiente código se usan delegados para implementar el patrón observer
+
+```c#
+namespace observer_delegates
+{
+    class Programa
+    {
+        static void Main(string[] args)
+        {
+            // Crear el sujeto
+            Sujeto sujeto = new Sujeto();
+
+            // Crear observadores
+            Observador observador1 = new Observador("Observador 1");
+            Observador observador2 = new Observador("Observador 2");
+
+            // Suscribir observadores al evento del sujeto
+            sujeto.Notificar += observador1.Actualizar;
+            sujeto.Notificar += observador2.Actualizar;
+
+            // Cambiar el estado del sujeto (esto notificará a los observadores)
+            sujeto.Estado = "Activo";
+
+            // Otro cambio de estado
+            sujeto.Estado = "Inactivo";
+
+            // Desuscribir uno de los observadores
+            sujeto.Notificar -= observador2.Actualizar;
+
+            // Cambiar el estado otra vez
+            sujeto.Estado = "En proceso";
+
+            // Evitar que la consola se cierre inmediatamente
+            Console.ReadLine();
+        }
+    }
+
+    // Definir el delegado que se utilizará para notificar a los observadores
+    public delegate void DelegadoNotificacion(string mensaje);
+
+    // Clase Sujeto (Subject)
+    public class Sujeto
+    {
+        // Evento basado en el delegado que se llamará cuando cambie el estado
+        public event DelegadoNotificacion Notificar;
+
+        private string _estado;
+        public string Estado
+        {
+            get { return _estado; }
+            set
+            {
+                _estado = value;
+                // Notificar a todos los observadores cuando cambie el estado
+                AlNotificar($"El estado ha cambiado a: {_estado}");
+            }
+        }
+
+        // Método para disparar el evento y notificar a los observadores
+        protected virtual void AlNotificar(string mensaje)
+        {
+            if (Notificar != null)
+            {
+                Notificar.Invoke(mensaje);  // Invoca el evento
+            }
+        }
+    }
+
+    // Clase Observador (Observer)
+    public class Observador
+    {
+        private string _nombre;
+
+        public Observador(string nombre)
+        {
+            _nombre = nombre;
+        }
+
+        // Método que será llamado cuando el sujeto notifique un cambio
+        public void Actualizar(string mensaje)
+        {
+            Console.WriteLine($"{_nombre} ha recibido la notificación: {mensaje}");
+        }
+    }
+
+   
+}
+```
 
 ## Punto 4 
 
