@@ -296,7 +296,7 @@ namespace ObserverApp
 
 ## Punto 3
 ### Consulte un código o librería nativo de C# que use el patrón decorador.
-Una librería de C# que implementa el patrón Decorador es System.IO, en específico a través de las clases relacionadas con stream (La clase Stream es la base para trabajar con flujos de datos en C#).Esta librería ofrece diversas clases de flujo que extienden la funcionalidad de un flujo base sin modificar  su estructura interna. 
+Una librería de C# que implementa el patrón Decorador es System.IO, a través de las clases relacionadas con stream (La clase Stream es la base para trabajar con flujos de datos en C#).Esta librería ofrece diversas clases de flujo que extienden la funcionalidad de un flujo base sin modificar  su estructura interna. 
 
 **Ejemplo de Clases en System.IO que usan el Patrón Decorador:**
 
